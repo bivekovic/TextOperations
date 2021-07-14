@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Text Operations</string>
+    <string-array name="jezici">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>C</item>
+        <item>C++</item>
+        <item>Python</item>
+        <item>Javascript</item>
+        <item>Go</item>
+        <item>Typescript</item>
+        <item>NodeJS</item>
+        <item>React</item>
+        <item>Spring</item>
+        <item>Angular</item>
+        <item>Objective C</item>
+        <item>Vue</item>
+        <item>Groovy</item>
+        <item>Ruby</item>
+        <item>Scala</item>
+        <item>Ruby on Rails</item>
+        <item>React Native</item>
+        <item>Ionic</item>
+        <item>Cordova</item>
+        <item>T-SQL</item>
+        <item>Sql</item>
+        <item>Bash</item>
+        <item>F#</item>
+        <item>PSQL</item>
+        <item>Mongo</item>
+        <item>Django</item>
+    </string-array>
+</resources>
