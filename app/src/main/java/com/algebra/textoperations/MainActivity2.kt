@@ -1,5 +1,7 @@
 package com.algebra.textoperations
 
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +18,8 @@ class MainActivity2 : AppCompatActivity() {
     private lateinit var rView                : RecyclerView
     private lateinit var search               : SearchView
 
+    private lateinit var clipboard            : ClipboardManager
+
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
         setContentView( R.layout.activity_main2 )
@@ -28,6 +32,8 @@ class MainActivity2 : AppCompatActivity() {
         rView               = findViewById( R.id.recycler )
         rView.layoutManager = LinearLayoutManager( this )
         rView.adapter       = LanguagesAdapter( displayedLanguages, this )
+
+        clipboard = getSystemService( Context.CLIPBOARD_SERVICE ) as ClipboardManager
     }
 
     private fun addProgrammingLanguages( ) {
@@ -46,10 +52,15 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected( item: MenuItem): Boolean {
-        if( item.itemId==R.id.pretraga ) {
-            Toast
-                .makeText( this, "Radi", Toast.LENGTH_SHORT )
-                .show( )
+        if( item.itemId==R.id.action_paste ) {
+            search.setQuery(
+                clipboard
+                    .primaryClip
+                    ?.getItemAt( 0 )
+                    ?.text
+                    .toString( ),
+                true
+            )
         }
         return super.onOptionsItemSelected( item )
     }
